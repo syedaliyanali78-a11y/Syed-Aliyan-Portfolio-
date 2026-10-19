@@ -1,0 +1,199 @@
+HTML
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#050505">
+<meta name="description" content="Syed Aliyan — Web Developer. Premium websites and digital experiences.">
+<title>Syed Aliyan | Web Developer</title>
+<style>
+:root{--gold:#e8bd68;--bg:#050505;--muted:#c0b9ad}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:#fff;
+font-family:Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+nav{position:sticky;top:0;z-index:5;display:flex;
+justify-content:space-between;align-items:center;
+padding:17px 6%;background:#050505ed;
+border-bottom:1px solid #c99a4938}
+.logo{font:26px Georgia;color:var(--gold)}
+nav div{display:flex;gap:16px;font-size:12px}
+nav a:hover{color:var(--gold)}
+#intro{position:fixed;inset:0;z-index:10;
+display:grid;place-items:center;text-align:center;
+background:radial-gradient(ellipse,#38250c,#080705 48%,#020202);
+transition:opacity .9s,visibility .9s;overflow:hidden}
+#intro.hide{opacity:0;visibility:hidden;pointer-events:none}
+#intro:before{content:"";position:absolute;width:65vw;
+height:65vw;max-width:430px;max-height:430px;
+border:1px solid #d6a64e;border-radius:50%;
+box-shadow:0 0 65px #d9a44835,inset 0 0 50px #d9a44820;
+animation:spin 12s linear infinite}
+.intro-content{position:relative;animation:reveal 1.2s both}
+.monogram{font:clamp(90px,22vw,145px) Georgia;
+color:#ffe8a7;text-shadow:0 0 30px #eab84d;
+animation:shine 2s infinite alternate}
+.intro-name{font:clamp(30px,8vw,55px) Georgia;
+letter-spacing:.09em;color:var(--gold);margin-top:12px}
+.intro-sub{font-size:11px;letter-spacing:.4em;margin-top:12px}
+.skip{position:absolute;right:20px;bottom:25px;
+padding:11px 17px;border:1px solid var(--gold);
+border-radius:25px;background:#080808;color:var(--gold)}
+.hero{min-height:82vh;display:flex;align-items:center;
+padding:75px 8%;background:
+radial-gradient(ellipse at 80% 30%,#53361260,transparent 48%)}
+.content{max-width:800px}
+.eyebrow{color:var(--gold);font-size:11px;
+letter-spacing:.3em;text-transform:uppercase}
+h1{font:clamp(48px,10vw,94px)/1 Georgia;margin:25px 0;
+background:linear-gradient(100deg,#fff0bc,#d9a344,#fff4cb);
+color:transparent;background-clip:text}
+.hero p,.about p,.card p{color:var(--muted);line-height:1.8}
+.btn{display:inline-block;margin:12px 8px 0 0;padding:13px 19px;
+border:1px solid var(--gold);font-size:12px}
+.primary{background:var(--gold);color:#090704;font-weight:bold}
+section:not(.hero){padding:65px 7%;border-top:1px solid #b98c3b2b}
+h2{font:clamp(32px,6vw,48px) Georgia;margin:15px 0 30px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.card{padding:23px;border:1px solid #c99a4945;
+background:linear-gradient(145deg,#19140c,#080808);
+transition:transform .3s,border-color .3s}
+.card:hover{transform:translateY(-5px);border-color:var(--gold)}
+.card h3{color:#f7e3b2}
+.symbol{font-size:28px;color:var(--gold)}
+.about{max-width:750px}
+.contact{border:1px solid #c99a4960;padding:25px;
+background:linear-gradient(130deg,#211709,#090909)}
+footer{text-align:center;padding:28px;color:#948a78;font-size:11px}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes reveal{from{opacity:0;transform:translateY(25px) scale(.92)}
+to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes shine{to{filter:brightness(1.5);text-shadow:0 0 45px #e8bd68}}
+@media(max-width:650px){
+ nav{padding:15px 4%}nav div{gap:10px;font-size:10px}
+ .logo{font-size:21px}.grid{grid-template-columns:1fr}
+ .hero{padding:65px 7%;min-height:75vh}
+ section:not(.hero){padding:50px 6%}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*:before,*:after{animation:none!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+
+<div id="intro">
+ <div class="intro-content">
+  <div class="monogram">SA</div>
+  <div class="intro-name">SYED ALIYAN</div>
+  <div class="intro-sub">WEB DEVELOPER</div>
+  <p class="eyebrow">Design · Code · Experience</p>
+ </div>
+ <button class="skip" id="skip">SKIP INTRO ↗</button>
+</div>
+
+<nav>
+ <a class="logo" href="#home">SA.</a>
+ <div>
+  <a href="#services">Services</a>
+  <a href="#projects">Work</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+ </div>
+</nav>
+
+<main>
+<section class="hero" id="home">
+ <div class="content">
+  <div class="eyebrow">Independent Web Developer</div>
+  <h1>Ideas into<br>digital impact.</h1>
+  <p>I create modern, responsive websites and e-commerce
+  experiences that help businesses build trust and grow online.</p>
+  <a class="btn primary" href="#projects">EXPLORE MY WORK ↗</a>
+  <a class="btn" href="#contact">START A PROJECT</a>
+ </div>
+</section>
+
+<section id="services">
+ <div class="eyebrow">What I do</div><h2>My Services</h2>
+ <div class="grid">
+  <article class="card"><div class="symbol">⌘</div>
+   <h3>Website Development</h3>
+   <p>Modern, mobile-friendly websites for businesses.</p></article>
+  <article class="card"><div class="symbol">◈</div>
+   <h3>E-commerce Stores</h3>
+   <p>Product-focused online stores with clear navigation.</p></article>
+  <article class="card"><div class="symbol">✳</div>
+   <h3>AI Solutions</h3>
+   <p>Useful AI-assisted tools and business workflows.</p></article>
+  <article class="card"><div class="symbol">✦</div>
+   <h3>Digital Branding</h3>
+   <p>Consistent, professional digital presentation.</p></article>
+  <article class="card"><div class="symbol">↗</div>
+   <h3>Landing Pages</h3>
+   <p>Focused pages designed around your business goals.</p></article>
+  <article class="card"><div class="symbol">◎</div>
+   <h3>Website Redesign</h3>
+   <p>Visual upgrades and responsive layout improvements.</p></article>
+ </div>
+</section>
+
+<section id="projects">
+ <div class="eyebrow">Selected work</div><h2>My Projects</h2>
+ <div class="grid">
+  <article class="card"><div class="symbol">01</div>
+   <h3>Elite Interior Dubai</h3>
+   <p>Luxury interior design website concept.</p></article>
+  <article class="card"><div class="symbol">02</div>
+   <h3>Dubai Salon</h3>
+   <p>Premium beauty and salon website concept.</p></article>
+  <article class="card"><div class="symbol">03</div>
+   <h3>E-commerce Store</h3>
+   <p>Online shopping experience concept.</p></article>
+ </div>
+ <p class="about">Important: In cards ko apne actual live project links
+ se replace karna. Sirf wohi projects show karna jo tumne banaye hain.</p>
+</section>
+
+<section id="about">
+ <div class="eyebrow">Who I am</div><h2>About Me</h2>
+ <div class="about">
+  <p>I’m Syed Aliyan, a web developer focused on creating polished
+  digital experiences for businesses in Pakistan, Dubai, and beyond.</p>
+  <p>I care about responsive design, clean layouts, useful features,
+  and websites that support real business goals.</p>
+ </div>
+</section>
+
+<section id="contact">
+ <div class="eyebrow">Let's work together</div>
+ <h2>Have a project in mind?</h2>
+ <div class="contact">
+  <p>Tell me about your business and the website you need.</p>
+  <a class="btn primary" target="_blank" rel="noopener"
+  href="https://wa.me/923182477207?text=Hi%20Syed%20Aliyan%2C%20I%20need%20a%20business%20website.">
+  CHAT ON WHATSAPP ↗</a>
+  <a class="btn" href="mailto:syedaliyan78@gmail.com">EMAIL ME</a>
+ </div>
+</section>
+</main>
+
+<footer>© <span id="year"></span> SYED ALIYAN · WEB DEVELOPER</footer>
+
+<script>
+const intro=document.getElementById('intro');
+function closeIntro(){
+ intro.classList.add('hide');
+ document.body.style.overflow='';
+}
+document.body.style.overflow='hidden';
+document.getElementById('skip').addEventListener('click',closeIntro);
+window.addEventListener('load',()=>setTimeout(closeIntro,4000));
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+</body>
+  </html>
+  
